@@ -23,10 +23,11 @@ const baseConfig: webpack.Configuration = {
       {
         test: /\.m?js$/,
         exclude: ["/node_modules/"],
-        loader: "babel-loader",
-        options: {
-          cacheDirectory: isDev,
-          module: false,
+        use: {
+          loader: `babel-loader?cacheDirectory=${isDev}`,
+          options: {
+            presets: ["@babel/preset-env"],
+          },
         },
       },
       {
