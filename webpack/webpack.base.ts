@@ -1,4 +1,4 @@
-import { isDev, isProd } from './contants';
+import { isDev, isProd } from "./contants";
 import webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import path from "path";
@@ -25,8 +25,9 @@ const baseConfig: webpack.Configuration = {
         exclude: ["/node_modules/"],
         loader: "babel-loader",
         options: {
-          cacheDirectory: isDev
-        }
+          cacheDirectory: isDev,
+          module: false,
+        },
       },
       {
         test: /\.(ts|tsx)$/i,
@@ -35,17 +36,12 @@ const baseConfig: webpack.Configuration = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader",
-          "sass-loader",
-        ],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"],
       },
       {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
-        sideEffects: true
+        sideEffects: true,
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
@@ -78,8 +74,8 @@ const baseConfig: webpack.Configuration = {
         terserOptions: {
           compress: {
             drop_console: isProd,
-          }
-        }
+          },
+        },
       }),
     ],
     moduleIds: "deterministic",
@@ -130,7 +126,7 @@ const baseConfig: webpack.Configuration = {
       "@": path.resolve("src"),
     },
     modules: [path.resolve("src"), "node_modules"],
-  }
+  },
 };
 
 if (process.env.ANALYZER) {

@@ -1,6 +1,6 @@
-const fabric = require('@umijs/fabric');
+const prettier = require("react-ts-fabric/dist/prettier");
 
 module.exports = {
-  ...fabric.prettier,
+  ...prettier,
   singleQuote: false,
 };

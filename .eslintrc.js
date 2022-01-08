@@ -1,5 +1,5 @@
 module.exports = {
-  extends: [require.resolve("@umijs/fabric/dist/eslint")],
+  extends: [require.resolve("react-ts-fabric/dist/eslint")],
   globals: {},
   rules: {
     "no-template-curly-in-string": "off",
