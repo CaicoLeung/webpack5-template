@@ -12,7 +12,7 @@ const baseConfig: webpack.Configuration = {
   stats: "minimal",
   context: path.resolve(process.cwd()),
   entry: {
-    index: "./src/index.ts",
+    index: "./src/index.tsx",
   },
   output: {
     clean: true,
