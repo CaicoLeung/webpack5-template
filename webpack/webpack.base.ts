@@ -45,7 +45,7 @@ const baseConfig: webpack.Configuration = {
         sideEffects: true,
       },
       {
-        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|jpeg|gif)$/i,
         type: "asset/resource",
       },
       {
