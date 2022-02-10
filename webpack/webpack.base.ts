@@ -12,11 +12,14 @@ const baseConfig: webpack.Configuration = {
   stats: "minimal",
   context: path.resolve(process.cwd()),
   entry: {
-    index: "./src/index.tsx",
+    home: "./src/index.tsx",
+    dubai: "./src/raptor.ts",
   },
   output: {
     clean: true,
     path: path.join(process.cwd(), "dist"),
+    filename: "[name].[hash:8].js",
+    chunkFilename: "[id].[chunkhash].js",
   },
   module: {
     rules: [
@@ -62,6 +65,14 @@ const baseConfig: webpack.Configuration = {
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: "src/index.html",
+      filename: "index.html",
+      chunks: ["home"],
+    }),
+    new HtmlWebpackPlugin({
+      template: "src/html/dubai.html",
+      filename: "dubai.html",
+      chunks: ["dubai"],
+      excludeChunks: ["index"],
     }),
     new CopyWebpackPlugin({
       patterns: [{ from: "static", to: "static" }],
