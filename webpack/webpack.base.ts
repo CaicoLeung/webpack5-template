@@ -40,6 +40,10 @@ const baseConfig: webpack.Configuration = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"],
       },
       {
+        test: /\.less$/i,
+        use: ["style-loader", "css-loader", "less-loader"],
+      },
+      {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
         sideEffects: true,
