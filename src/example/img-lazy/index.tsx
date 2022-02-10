@@ -1,11 +1,12 @@
 import React, { useEffect, useRef } from "react";
+import styles from "./index.module.scss";
 
 const ImgLazyPage: React.FC = () => {
   const rootRef = useRef<HTMLDivElement>(null);
 
   const handler = () => {
     if (!rootRef.current) {
-      return
+      return;
     }
     const imgs = rootRef.current.querySelectorAll("img");
 
@@ -23,19 +24,17 @@ const ImgLazyPage: React.FC = () => {
       });
     };
 
-    const intersectionObserver = new IntersectionObserver(
-      intersectionObserverCallback,
-    );
+    const intersectionObserver = new IntersectionObserver(intersectionObserverCallback);
 
     imgs.forEach((img) => {
       intersectionObserver.observe(img);
     });
-  }
+  };
 
   useEffect(handler, []);
 
   return (
-    <div ref={rootRef}>
+    <div ref={rootRef} className={styles.container}>
       <p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
       <p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
       <p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
@@ -129,6 +128,6 @@ const ImgLazyPage: React.FC = () => {
       <p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
     </div>
   );
-}
+};
 
 export default ImgLazyPage;

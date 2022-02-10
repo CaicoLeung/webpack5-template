@@ -1,12 +1,14 @@
-import ImgLazyPage from "@/pages/img-lazy/index";
+import ImgLazyPage from "@/example/img-lazy/index";
 import React from "react";
+import Draggable from "@/example/draggable";
 
 const App: React.FC = () => {
   return (
     <div className="app">
-      <ImgLazyPage />
+      {/*<ImgLazyPage />*/}
+      <Draggable />
     </div>
-  )
-}
+  );
+};
 
 export default App;
