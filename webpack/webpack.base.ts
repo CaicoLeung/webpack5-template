@@ -7,6 +7,7 @@ import CopyWebpackPlugin from "copy-webpack-plugin";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import ESLintWebpackPlugin from "eslint-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import PurgecssPlugin from "purgecss-webpack-plugin";
 
 const baseConfig: webpack.Configuration = {
   stats: "minimal",
@@ -69,10 +70,13 @@ const baseConfig: webpack.Configuration = {
       chunks: ["home"],
     }),
     new HtmlWebpackPlugin({
-      template: "src/html/dubai.html",
+      template: "src/html/chestertons_dubai.html",
       filename: "dubai.html",
       chunks: ["dubai"],
       excludeChunks: ["index"],
+    }),
+    new PurgecssPlugin({
+      paths: ["src/html/chestertons_dubai.html"],
     }),
     new CopyWebpackPlugin({
       patterns: [{ from: "static", to: "static" }],
