@@ -124,14 +124,14 @@ const baseConfig: webpack.Configuration = {
           enforce: true,
           reuseExistingChunk: true,
         },
-        vendors: {
+        /*vendors: {
           name: "chunk-vendors",
           test: /[\\/]node_modules[\\/]/,
           chunks: "all",
           priority: 2,
           enforce: true,
           reuseExistingChunk: true,
-        },
+        },*/
       },
     },
   },
@@ -155,14 +155,13 @@ if (process.env.ANALYZER) {
 if (isRaptorProject) {
   Object.assign(baseConfig.entry, getChestertonEntry());
   const plugins = getChestertonsHtmlWebpackPlugins();
-  console.log(plugins);
+
   baseConfig.plugins?.push(
     ...plugins,
     new PurgecssPlugin({
       paths: getAllChestertonsHtml().map((name) => `raptor/${name}/index.html`),
     }),
   );
-  console.info(baseConfig);
 }
 
 export default baseConfig;
