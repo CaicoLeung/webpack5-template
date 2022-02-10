@@ -1,4 +1,3 @@
-import ImgLazyPage from "@/example/img-lazy/index";
 import React from "react";
 import Draggable from "@/example/draggable";
 

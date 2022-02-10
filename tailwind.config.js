@@ -136,7 +136,7 @@ if (autoMergeCommon) {
 }
 
 module.exports = {
-  darkMode: false,
+  darkMode: "media",
   purge: {
     layers: ["components", "utilities"],
     content: content,
