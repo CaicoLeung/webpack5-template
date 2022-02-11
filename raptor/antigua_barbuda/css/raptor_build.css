@@ -1,6 +1,6 @@
-/*!****************************************************************************************************************************************!*\
+/* !****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./raptor/antigua&barbuda/css/raptor_core.css ***!
-  \****************************************************************************************************************************************/
+  \  ****************************************************************************************************************************************/
 
 .chpt_frame.bodyWidth {
   min-width: 300px
@@ -208,7 +208,7 @@ ul.list li {
   list-style: none
 }
 
-ul.list li:before {
+ul.list li::before {
   content: "•";
   margin-right: .3em
 }
@@ -360,13 +360,13 @@ textarea {
   margin: 0 -16px
 }
 
-.row:after {
+.row::after {
   content: "";
   display: table;
   clear: both
 }
 
-[class*=parent-col-] {
+[class*="parent-col-"] {
   display: block;
   padding: 0 16px;
   min-height: .125rem;
@@ -459,9 +459,9 @@ textarea {
   }
 }
 
-/*!****************************************************************************************************************************************!*\
+/* !****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./raptor/antigua&barbuda/css/raptor_foot.css ***!
-  \****************************************************************************************************************************************/
+  \  ****************************************************************************************************************************************/
 
 @media screen and (min-width: 1441px) {
 
@@ -497,7 +497,7 @@ textarea {
   }
 }
 
-@media screen and (max-width: 414px) and (min-width: 0px) {
+@media screen and (max-width: 414px) and (min-width: 0) {
 
   h3,
   h3 a {
@@ -546,7 +546,7 @@ textarea {
   }
 }
 
-@media screen and (max-width: 414px) and (min-width: 0px) {
+@media screen and (max-width: 414px) and (min-width: 0) {
 
   p,
   ul,
@@ -567,7 +567,7 @@ ul.list li {
   list-style: none
 }
 
-ul.list li:before {
+ul.list li::before {
   content: "•";
   margin-right: .3em
 }
@@ -611,11 +611,11 @@ div.block-section {
   text-align: left
 }
 
-.pullquote_section .pullquote_text blockquote p:before {
+.pullquote_section .pullquote_text blockquote p::before {
   content: open-quote
 }
 
-.pullquote_section .pullquote_text blockquote p:after {
+.pullquote_section .pullquote_text blockquote p::after {
   content: close-quote
 }
 
@@ -894,9 +894,9 @@ div > p:first-child {
   }
 }
 
-/*!*****************************************************************************************************************************************!*\
+/* !*****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./raptor/antigua&barbuda/css/raptor_slick.css ***!
-  \*****************************************************************************************************************************************/
+  \  *****************************************************************************************************************************************/
 
 @media screen and (max-width: 767px) {
 
@@ -907,9 +907,9 @@ div > p:first-child {
   }
 }
 
-/*!******************************************************************************************************************************************!*\
+/* !******************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./raptor/antigua&barbuda/css/raptor_branch.css ***!
-  \******************************************************************************************************************************************/
+  \  ******************************************************************************************************************************************/
 
 .team_block .name {
   font-size: 16px;
@@ -1032,7 +1032,7 @@ div > p:first-child {
 }
 
 .team_block .team_member:last-child {
-  border-right: solid 0px #515151
+  border-right: solid 0 #515151
 }
 
 #branchContainer > div.chpt-_location-content:nth-child(even) {
