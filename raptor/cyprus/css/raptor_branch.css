@@ -1,0 +1,648 @@
+.chpt_branch_filter {
+  padding-left: 0;
+  margin: 0;
+  position: fixed;
+  width: calc(50% - 5px);
+  z-index: 10;
+  background-color: #f2f1f0;
+  left: 20px
+}
+
+@media (max-width: 1023px) {
+  .chpt_branch_filter {
+    width: calc(64.3%)
+  }
+}
+
+@media (max-width: 767px) {
+  .chpt_branch_filter {
+    width: calc(100% - 20px);
+    left: 10px
+  }
+}
+
+.mm-main-section {
+  background-color: #f2f1f0;
+  min-height: 100vh
+}
+
+.chpt_branch_filter .chosen-container {
+  padding: 16px 0
+}
+
+.map_block h3 {
+  font-size: 28px
+}
+
+.map_block h2 {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 8px
+}
+
+.branch-page h4 {
+  margin: 24px 0 8px
+}
+
+.map_block p {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  font-family: "webSerif"
+}
+
+.map_block .info {
+  padding: 32px;
+  background-color: rgba(122, 188, 49, .77);
+  z-index: 10
+}
+
+.map_block .info h2,
+.map_block .info p,
+.map_block .info a {
+  color: #fff
+}
+
+.map_block .info_group {
+  margin-top: 24px
+}
+
+.map_block .info_group p {
+  font-size: 16px;
+  margin-bottom: 0;
+  font-family: "webSans", sans-serif;
+  font-weight: 500
+}
+
+.map_block .info_group a {
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 500
+}
+
+html:not(.touchevents) .map_block .info_group a:hover {
+  color: #de4390;
+  color: var(--web-pink)
+}
+
+.map_block .map {
+  width: 100%;
+  height: 225px;
+  z-index: 0
+}
+
+@media screen and (max-width: 767px) {
+  .map_block .map {
+    display: none
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .map_block {
+    position: relative;
+    padding: 32px 0 24px;
+    margin: 0;
+    display: flex;
+    align-items: center
+  }
+
+  .map_block p {
+    font-size: 14px
+  }
+
+  .map_block a {
+    font-size: 12px
+  }
+
+  .map_block .info {
+    width: 39%;
+    min-width: 335px;
+    position: absolute !important
+  }
+
+  .map_block .map {
+    width: 82%;
+    margin-left: auto;
+    height: 385px
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .map_block .info {
+    width: 45%
+  }
+
+  .map_block .map {
+    height: 390px
+  }
+}
+
+@media screen and (min-width: 1280px) {
+
+  .map_block p,
+  .map_block a {
+    font-size: 16px
+  }
+
+  .map_block .info {
+    width: 352px
+  }
+}
+
+.team_block .name {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  margin-bottom: 0
+}
+
+@media screen and (min-width: 786px) {
+  .team_block .name {
+    font-weight: 400
+  }
+}
+
+.team_block a {
+  text-decoration: none
+}
+
+.team_block a,
+.team_block .bio {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left
+}
+
+.team_block .team_member {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: solid 2px #515151
+}
+
+.team_block .team_member img {
+  margin-right: 32px
+}
+
+.team_block .team_member:last-child {
+  border-bottom: none
+}
+
+@media screen and (max-width: 1023px) {
+  .team_block .team_member img {
+    width: 27%;
+    margin-right: 32px
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .team_block {
+    padding: 24px 0
+  }
+
+  .team_block .flex_container {
+    display: flex;
+    align-items: flex-start
+  }
+
+  .team_block .team_member {
+    width: 50%;
+    border: none
+  }
+
+  .team_block .team_member:first-child {
+    border-right: solid 2px #515151;
+    padding-right: 64px
+  }
+
+  .team_block .team_member:first-child:last-child {
+    width: 100%;
+    border: none
+  }
+
+  .team_block .team_member:last-child {
+    padding-left: 16px
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .team_block .team_member:first-child {
+    padding-right: 32px
+  }
+
+  .team_block .team_member:last-child {
+    padding-left: 32px
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .team_block .team_member:first-child {
+    padding-right: 64px
+  }
+
+  .team_block .team_member:last-child {
+    padding-left: 64px
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .team_block .name {
+    font-size: 18px
+  }
+
+  .team_block .team_member:first-child {
+    padding-right: 76px
+  }
+
+  .team_block .team_member:last-child {
+    padding-left: 76px
+  }
+}
+
+.review_block {
+  background-color: #fddc47 !important;
+  padding: 32px 0
+}
+
+.review_block .stars .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px
+}
+
+.review_block .name {
+  font-size: 16px
+}
+
+.review_block .name span {
+  font-size: 14px
+}
+
+.review_block p {
+  font-size: 14px;
+  font-weight: 400
+}
+
+.review_block .review {
+  margin-bottom: 32px
+}
+
+@media screen and (min-width: 768px) {
+  .review_block .stars .icon {
+    width: 14px;
+    height: 14px
+  }
+
+  .review_block .name {
+    margin-top: 0
+  }
+
+  .review_block .reviews {
+    display: flex;
+    align-items: flex-start
+  }
+
+  .review_block .review {
+    padding-right: 24px;
+    border-right: solid 2px #fff;
+    margin-right: 24px;
+    margin-bottom: 0
+  }
+
+  .review_block .review:last-child {
+    border: none
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .review_block {
+    padding: 48px 0
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .review_block {
+    padding: 64px 0
+  }
+
+  .review_block .stars {
+    display: inline-block;
+    margin-right: 5px
+  }
+
+  .review_block .stars .icon {
+    width: 20px;
+    height: 20px
+  }
+
+  .review_block .name {
+    display: inline-block;
+    font-size: 18px;
+    margin-bottom: 0
+  }
+
+  .review_block p {
+    font-size: 16px
+  }
+
+  .review_block .review {
+    padding-right: 24px;
+    margin-right: 24px
+  }
+}
+
+.cke_editable {
+  z-index: 9999
+}
+
+.team_block h2 {
+  margin-bottom: 16px
+}
+
+@media screen and (max-width: 768px) {
+  .team_block .team_member:first-child {
+    margin-bottom: 24px;
+    padding-bottom: 24px
+  }
+}
+
+.team_block {
+  padding: 0 0 !important
+}
+
+.team_block .team_member:last-child {
+  border-right: solid 0px #515151
+}
+
+.gm-style .branch-container .branch-head .branch-image:before {
+  padding-top: 0 !important
+}
+
+.gm-style .branch-container {
+  background-color: #fff
+}
+
+.info-box-wrap {
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, .08)
+}
+
+.info-box-text-wrap {
+  height: 40px !important;
+  width: 120px;
+  float: left;
+  overflow: hidden
+}
+
+.action-btns {
+  float: left;
+  width: 70px;
+  overflow: hidden;
+  position: relative;
+  top: 12px;
+  left: 6px
+}
+
+.action-btns i {
+  font-size: 18px;
+  color: #78a737;
+  margin-left: 3px
+}
+
+html:not(.touchevents) .action-btns i:hover {
+  transition: color .5s ease;
+  color: #ccc;
+  cursor: pointer
+}
+
+.action-btns i.fa-heart-o {
+  font-weight: 700
+}
+
+.info-box-text-wrap h6.address {
+  padding: 6px 5px 1px 0;
+  margin: 0;
+  font-family: "Roboto Slab";
+  color: #0c99c8;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+.info-box-text-wrap p {
+  padding: 0;
+  margin: 0
+}
+
+.info-box-text-wrap p.price {
+  color: #b25b00
+}
+
+.tabContentSelecter {
+  padding: 10px 0 0
+}
+
+.tabContentSelecter select {
+  font-size: 11px;
+  padding: 6px 20px 4px 10px;
+  border-radius: 6px;
+  text-transform: uppercase
+}
+
+.tabContentSelecter select option {
+  color: #4b4b4b
+}
+
+.info-box-wrap img {
+  width: 40px !important;
+  height: 40px;
+  float: left;
+  margin-right: 10px;
+  padding-top: 0;
+  margin-top: 0
+}
+
+.ui-sortable-handle {
+  cursor: move
+}
+
+.serviceReview p {
+  font-size: 23px;
+  line-height: 150%;
+  font-family: webSerif;
+  font-style: italic
+}
+
+.serviceAuthor {
+  font-size: 16px;
+  font-family: webSans;
+  font-weight: 500;
+  text-align: right
+}
+
+.slickRow.testimonials {
+  margin-top: 20px
+}
+
+.slickRow.testimonials .slick-arrow {
+  top: -40px !important;
+  width: 44px !important
+}
+
+
+.slickRow.testimonials .slick-arrow:hover > div {
+  background-color: transparent !important
+}
+
+.slickRow.testimonials .slick-arrow.slick-prev {
+  display: none !important
+}
+
+.slickRow.testimonials.slick-initialized .slick-slide {
+  margin: 0 10px !important
+}
+
+@media screen and (max-width: 767px) {
+  .slickRow.testimonials .slick-arrow.slick-prev {
+    left: -5px !important
+  }
+
+  .slickRow.testimonials .slick-arrow.slick-next {
+    right: 0 !important
+  }
+}
+
+#branchContainer > div.chpt-_location-content:nth-child(even) {
+  background-color: #f8f8f7
+}
+
+h4,
+.h4 {
+  font-size: 24px;
+  font-family: "webSerif";
+  font-weight: 400
+}
+
+@media screen and (max-width: 767px) {
+  .img_float_block .right-img {
+    margin-bottom: 12px
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .img_float_block .right-img {
+    margin-top: 0
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .img_float_block .right-img {
+    margin-top: 36px
+  }
+}
+
+.filter_block {
+  padding: 8px 0 15px
+}
+
+.filter_block a {
+  text-decoration: none
+}
+
+.filter_block .filters {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center
+}
+
+.filter_block .filters .icon {
+  zztransition: .3s;
+  margin-top: 18px
+}
+
+.filter_block .filters .filter {
+  text-align: center;
+  width: 100%
+}
+
+.filter_block .filters .filter span {
+  line-height: .8em !important
+}
+
+.filter_block .filters .filter:nth-child(2) {
+  border-left: solid 2px #515151;
+  border-right: solid 2px #515151
+}
+
+html:not(.touchevents) .filter_block .filters .filter a:hover span,
+html:not(.touchevents) .filter_block .filters .filter a:hover p {
+  color: #de4390;
+  color: var(--web-pink)
+}
+
+.filter_block span,
+.filter_block p {
+  zztransition: .3s;
+  font-size: 14px;
+  font-weight: 400
+}
+
+.filter_block span {
+  text-decoration: none
+}
+
+.filter_block p {
+  margin-bottom: 0;
+  margin-top: 10px;
+  text-align: center
+}
+
+.filter_block .icon {
+  margin-top: 10px;
+  display: inline-block;
+  background-size: contain;
+  width: 20px;
+  height: 20px
+}
+
+@media screen and (min-width: 768px) {
+  .filter_block {
+    padding: 8px 0 0
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .filter_block {
+    padding: 30px 0 15px
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .filter_block {
+    padding: 30px 0 44px
+  }
+
+  .filter_block p,
+  .filter_block span {
+    font-size: 16px
+  }
+
+  .filter_block .icon {
+    width: 24px;
+    height: 24px
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .filter_block .icon {
+    width: 30px;
+    height: 30px
+  }
+}
+
+.ss-container {
+  background-color: #f8f8f7;
+  padding: 10px 0
+}
