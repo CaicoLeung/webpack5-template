@@ -1357,7 +1357,7 @@ html:not(.touchevents) .slick-arrow:hover > div {
   background-size: 40% !important;
   background-repeat: no-repeat;
   background-color: transparent !important;
-  background-image: url(93813e0878e342825f2f.svg) !important;
+  background-image: url(../icons/icon-arrow-right.svg) !important;
   width: 44px !important
 }
 
