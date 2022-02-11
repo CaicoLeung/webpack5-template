@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
-import { Options } from "html-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import { isProd } from "../contants";
 
 const htmlFolder = path.join(process.cwd(), "raptor");
 
@@ -13,11 +13,20 @@ function getChestertonsHtmlName(file: string) {
   return file.replace(/\.html$/, "");
 }
 
-function getHtmlWebpackPluginConfig(fileName: string): Options {
+function getHtmlWebpackPluginConfig(fileName: string): HtmlWebpackPlugin.Options {
   return {
     template: `raptor/${fileName}/index.html`,
     filename: `${fileName}.html`,
     chunks: [`${fileName}`],
+    minify: isProd && {
+      removeComments: true,
+      removeRedundantAttributes: true,
+      removeEmptyAttributes: true,
+      collapseWhitespace: true,
+      removeStyleLinkTypeAttributes: true,
+      minifyCSS: true,
+      minifyJS: true,
+    },
   };
 }
 

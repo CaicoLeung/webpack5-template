@@ -7,10 +7,7 @@ import CopyWebpackPlugin from "copy-webpack-plugin";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import ESLintWebpackPlugin from "eslint-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import PurgecssPlugin from "purgecss-webpack-plugin";
-import getChestertonsHtmlWebpackPlugins, {
-  getAllChestertonsHtml,
-} from "./utils/getChestertonsHtmlWebpackPlugins";
+import getChestertonsHtmlWebpackPlugins from "./utils/getChestertonsHtmlWebpackPlugins";
 import getChestertonEntry from "./utils/getChestertonEntry";
 
 const baseConfig: webpack.Configuration = {
@@ -49,7 +46,7 @@ const baseConfig: webpack.Configuration = {
       },
       {
         test: /\.less$/i,
-        use: ["style-loader", "css-loader", "less-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "less-loader"],
       },
       {
         test: /\.css$/i,
@@ -81,17 +78,19 @@ const baseConfig: webpack.Configuration = {
       fix: true,
     }),
   ],
-  cache: {
-    type: "filesystem",
-  },
+  cache: false,
   optimization: {
     minimize: true,
     minimizer: [
       new TerserPlugin({
         parallel: true, // Enable/disable multi-process parallel running.
         terserOptions: {
+          output: {
+            comments: isProd,
+          },
           compress: {
             drop_console: isProd,
+            drop_debugger: isProd,
           },
         },
       }),
@@ -127,14 +126,14 @@ const baseConfig: webpack.Configuration = {
           enforce: true,
           reuseExistingChunk: true,
         },
-        /*vendors: {
+        vendors: {
           name: "chunk-vendors",
-          test: /[\\/]node_modules[\\/]/,
+          test: /[\\/]node_modules[\\/](react|react-dom)/,
           chunks: "all",
           priority: 2,
           enforce: true,
           reuseExistingChunk: true,
-        },*/
+        },
       },
     },
   },
@@ -159,12 +158,7 @@ if (isRaptorProject) {
   Object.assign(baseConfig.entry, getChestertonEntry());
   const plugins = getChestertonsHtmlWebpackPlugins();
 
-  baseConfig.plugins?.push(
-    ...plugins,
-    new PurgecssPlugin({
-      paths: getAllChestertonsHtml().map((name) => `raptor/${name}/index.html`),
-    }),
-  );
+  baseConfig.plugins?.push(...plugins);
 }
 
 export default baseConfig;
