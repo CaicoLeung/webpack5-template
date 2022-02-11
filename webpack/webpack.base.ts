@@ -81,6 +81,9 @@ const baseConfig: webpack.Configuration = {
       fix: true,
     }),
   ],
+  cache: {
+    type: "filesystem",
+  },
   optimization: {
     minimize: true,
     minimizer: [
