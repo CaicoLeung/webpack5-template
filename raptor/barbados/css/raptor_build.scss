@@ -771,6 +771,7 @@
     }
 
     .img_float_block .right-content {
+      padding-top: 2rem;
       width: 37.6%;
       float: right
     }
@@ -938,6 +939,10 @@
     font-size: 14px;
     font-weight: 400;
     text-align: left
+  }
+
+  .team_block .bio {
+    margin-top: 14px;
   }
 
   .team_block .team_member {
