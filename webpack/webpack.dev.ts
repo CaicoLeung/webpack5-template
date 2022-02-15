@@ -1,6 +1,6 @@
 import webpack from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import webpackMerge from "webpack-merge"
+import webpackMerge from "webpack-merge";
 import baseConfig from "./webpack.base";
 
 const config: webpack.Configuration = {
@@ -13,10 +13,10 @@ const config: webpack.Configuration = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: "[name].css",
-      chunkFilename: "[id].css"
+      chunkFilename: "[id].css",
     }),
-    new webpack.HotModuleReplacementPlugin()
-  ]
-}
+    new webpack.HotModuleReplacementPlugin(),
+  ],
+};
 
 export default webpackMerge(baseConfig, config);
