@@ -3,4 +3,4 @@
 // import "./css/raptor_slick.css";
 // import "./css/raptor_branch.css";
 
-import "./css/raptor_build.css";
+import "./css/raptor_build.scss";
