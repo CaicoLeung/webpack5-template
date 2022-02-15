@@ -140,7 +140,7 @@ const baseConfig: webpack.Configuration = {
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
     alias: {
-      "@": path.resolve(process.cwd(), "src"),
+      "@": path.join(process.cwd(), "src"),
     },
     modules: [path.resolve("src"), path.resolve("raptor"), "node_modules"],
   },
