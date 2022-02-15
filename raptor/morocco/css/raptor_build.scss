@@ -1,7 +1,7 @@
 .chpt_content_container {
-  /*!***************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./raptor/cayman_islands/css/raptor_core.css ***!
-  \***************************************************************************************************************************************/
+  .startHidden {
+    display: none
+  }
 
   .chpt_frame.bodyWidth {
     min-width: 300px
@@ -168,6 +168,18 @@
     }
   }
 
+  h5,
+  div.h5 {
+    font-family: "webSans";
+    margin: 0;
+    letter-spacing: 0;
+    font-kerning: none;
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 400;
+    color: #5b5b5b
+  }
+
   i {
     font-style: italic;
     font-display: swap
@@ -244,6 +256,11 @@
     background-color: transparent
   }
 
+  code {
+    font-family: monospace, monospace;
+    font-size: 1em
+  }
+
   small {
     font-size: 80%
   }
@@ -256,7 +273,7 @@
     height: auto !important
   }
 
-
+  button,
   textarea {
     font-family: inherit;
     font-size: 100%;
@@ -264,8 +281,37 @@
     margin: 0
   }
 
+  button {
+    overflow: visible
+  }
+
+  button {
+    text-transform: none
+  }
+
+  button,
+  [type="button"] {
+    -webkit-appearance: button
+  }
+
+  button::-moz-focus-inner,
+  [type="button"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0
+  }
+
+  button:-moz-focusring,
+  [type="button"]:-moz-focusring {
+    outline: 1px dotted ButtonText
+  }
+
   textarea {
     overflow: auto
+  }
+
+  [type="number"]::-webkit-inner-spin-button,
+  [type="number"]::-webkit-outer-spin-button {
+    height: auto
   }
 
   ::-webkit-file-upload-button {
@@ -301,7 +347,7 @@
     margin-left: auto;
     margin-right: auto;
     max-width: 1200px;
-    // padding: 0 16px
+    padding: 0 16px
   }
 
   .container .container {
@@ -380,6 +426,10 @@
     float: left
   }
 
+  .parent-col-1 {
+    width: calc(8.33333333% * 1)
+  }
+
   .parent-col-6 {
     width: calc(8.33333333% * 6)
   }
@@ -388,11 +438,43 @@
     width: calc(8.33333333% * 8)
   }
 
+  .parent-col-10 {
+    width: calc(8.33333333% * 10)
+  }
+
   .parent-col-12 {
     width: calc(8.33333333% * 12)
   }
 
+  .parent-col-text-9 .article_content > p,
+  .parent-col-text-9 .article_content > ul {
+    width: calc(8.33333333% * 9)
+  }
+
+  .show {
+    display: block !important
+  }
+
+  @media screen and (max-width: 1023px) {
+    .hide-md {
+      display: none !important
+    }
+
+    .parent-col-md-12 {
+      width: calc(8.33333333% * 12)
+    }
+
+    .parent-col-md-text-12 .article_content > p,
+    .parent-col-md-text-12 .article_content > ul {
+      width: unset
+    }
+  }
+
   @media screen and (max-width: 767px) {
+
+    .flex {
+      display: block
+    }
     .hide-sm {
       display: none !important
     }
@@ -404,6 +486,10 @@
     .parent-col-sm-12 {
       width: calc(8.33333333% * 12)
     }
+
+    .flex {
+      display: block
+    }
   }
 
   @media screen and (max-width: 590px) {
@@ -413,6 +499,10 @@
 
     .show-ss {
       display: block !important
+    }
+
+    .flex {
+      display: block
     }
   }
 
@@ -428,6 +518,18 @@
 
   .parent-clear-even:nth-of-type(odd) {
     clear: both
+  }
+
+  .spacer-16 {
+    width: 100%;
+    height: 16px;
+    position: relative
+  }
+
+  .spacer-32 {
+    width: 100%;
+    height: 32px;
+    position: relative
   }
 
   .spacer-48 {
@@ -463,10 +565,6 @@
       opacity: 1
     }
   }
-
-  /*!***************************************************************************************************************************************!*\
-    !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./raptor/cayman_islands/css/raptor_foot.css ***!
-    \***************************************************************************************************************************************/
 
   @media screen and (min-width: 1441px) {
 
@@ -561,6 +659,13 @@
     }
   }
 
+  button {
+    border: 0;
+    background-color: transparent;
+    height: 50px;
+    padding-top: 5px
+  }
+
   ul.list {
     padding: 0
   }
@@ -601,7 +706,7 @@
     background-color: rgba(136, 126, 111, .9);
     padding: 2em;
     color: #fff;
-    quotes: "“""”""‘""’";
+    quotes: "“" "”" "‘" "’";
     position: relative;
     margin: 0;
     max-height: 75%
@@ -642,7 +747,7 @@
     background-color: rgba(136, 126, 111, .9);
     padding: 4em 3em;
     color: #fff;
-    quotes: "“""”""‘""’";
+    quotes: "“" "”" "‘" "’";
     position: relative;
     margin: 0
   }
@@ -771,7 +876,6 @@
     }
 
     .img_float_block .right-content {
-      padding-top: 2rem;
       width: 37.6%;
       float: right
     }
@@ -792,14 +896,72 @@
     }
   }
 
+  .block-wrap .wrappedElement {
+    float: right;
+    width: 100%
+  }
+
+  @media screen and (min-width: 768px) {
+    .block-wrap .wrappedElement {
+      margin-left: 16px;
+      margin-bottom: 16px;
+      max-width: 50%
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .block-wrap--end {
+      display: flex;
+      flex-direction: column-reverse
+    }
+
+    .block-wrap--end .wrappedElement {
+      margin-top: 20px
+    }
+  }
+
+  .article_content ul {
+    list-style: disc
+  }
+
   @media screen and (max-width: 767px) {
     img.contact {
       float: none
     }
   }
 
+  .article_content p a {
+    color: var(--hub-actionColor);
+    font-weight: 500
+  }
+
+  .article_content p,
+  .article_content ul,
+  .article_content li,
+  .article_content blockquote {
+    line-height: 145%;
+    max-width: 800px
+  }
+
+  .article_content h3 {
+    font-size: 20px;
+    margin: 22.5px 0;
+    font-family: "webSerif"
+  }
+
   .selectImg {
     height: auto
+  }
+
+  @media screen and (max-width: 767px) {
+    .article_content h3 {
+      font-size: 24px;
+      margin: 22.5px 0
+    }
+  }
+
+  .article_content h3:first-child {
+    margin-top: 0
   }
 
   .page-header--fixed.page-sub-header--fixed .chpt_content_container {
@@ -846,10 +1008,18 @@
     }
   }
 
+  .max50 {
+    max-width: 50%
+  }
+
   p,
   li,
   blockquote {
     text-align: initial
+  }
+
+  .webSerif {
+    font-family: webSerif
   }
 
   .info_block {
@@ -866,7 +1036,7 @@
     margin-top: 6px
   }
 
-  div>p:first-child {
+  div > p:first-child {
     margin-top: 0
   }
 
@@ -900,9 +1070,98 @@
     }
   }
 
-  /*!****************************************************************************************************************************************!*\
-    !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./raptor/cayman_islands/css/raptor_slick.css ***!
-    \****************************************************************************************************************************************/
+  .slick-arrow {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background-color: transparent
+  }
+
+  .slick-arrow.slick-prev:hover,
+  .slick-arrow.slick-prev:focus,
+  .slick-arrow.slick-next:hover,
+  .slick-arrow.slick-next:focus {
+    color: transparent;
+    outline: none;
+    background-color: transparent
+  }
+
+  .slick-arrow.slick-prev:hover::before,
+  .slick-arrow.slick-prev:focus::before,
+  .slick-arrow.slick-next:hover::before,
+  .slick-arrow.slick-next:focus::before {
+    opacity: 1
+  }
+
+  .slick-arrow.slick-prev::before,
+  .slick-arrow.slick-next::before {
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+    opacity: .75;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+  }
+
+  .slick-arrow.slick-prev {
+    left: -25px
+  }
+
+  .slick-arrow.slick-next {
+    right: 25px
+  }
+
+  .slick-arrow {
+    cursor: pointer;
+    padding: 0;
+    margin: 0 !important;
+    width: 24px;
+    height: 24px;
+    bottom: auto;
+    top: calc(50% - 33px) !important;
+    z-index: 10
+  }
+
+  .slick-arrow > div {
+    transition: linear background-color .5s;
+    transform: translate(0, 0%) !important;
+    background-repeat: no-repeat !important;
+    background-position: center 54% !important;
+    transform: rotate(90deg) translate(0, 0%) !important;
+    background-size: 40% !important;
+    margin: 12px
+  }
+
+  .slick-arrow.slick-prev {
+    left: 6%
+  }
+
+  .slick-arrow::before {
+    content: ""
+  }
+
+  .slick-arrow.slick-next {
+    right: 6%
+  }
+
+  .slick-arrow.slick-next > div {
+    transform: rotate(-90deg) translate(0, 0%) !important
+  }
+
+  html:not(.touchevents) .slick-arrow:hover > div {
+    background-color: #fff !important
+  }
 
   @media screen and (max-width: 767px) {
 
@@ -913,9 +1172,34 @@
     }
   }
 
-  /*!*****************************************************************************************************************************************!*\
-    !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./raptor/cayman_islands/css/raptor_branch.css ***!
-    \*****************************************************************************************************************************************/
+  .slick-arrow {
+    width: 48px;
+    height: 48px
+  }
+
+  @media screen and (max-aspect-ratio: 13/10) {
+
+    .slick-arrow {
+      height: 48px;
+      width: 48px
+    }
+  }
+
+  @media screen and (max-aspect-ratio: 10/10) {
+
+    .slick-arrow {
+      height: 30px;
+      width: 30px
+    }
+  }
+
+  @media screen and (max-width: 414px) {
+
+    .slick-arrow {
+      height: 30px;
+      width: 30px
+    }
+  }
 
   .team_block .name {
     font-size: 16px;
@@ -939,10 +1223,6 @@
     font-size: 14px;
     font-weight: 400;
     text-align: left
-  }
-
-  .team_block .bio {
-    margin-top: 14px;
   }
 
   .team_block .team_member {
@@ -1045,7 +1325,49 @@
     border-right: solid 0px #515151
   }
 
-  #branchContainer>div.chpt-_location-content:nth-child(even) {
+  .serviceReview p {
+    font-size: 23px;
+    line-height: 150%;
+    font-family: webSerif;
+    font-style: italic
+  }
+
+  .serviceAuthor {
+    font-size: 16px;
+    font-family: webSans;
+    font-weight: 500;
+    text-align: right
+  }
+
+  .slickRow.testimonials {
+    margin-top: 20px
+  }
+
+  .slickRow.testimonials .slick-arrow {
+    top: -40px !important;
+    width: 44px !important
+  }
+
+
+  .slickRow.testimonials .slick-arrow:hover > div {
+    background-color: transparent !important
+  }
+
+  .slickRow.testimonials .slick-arrow.slick-prev {
+    display: none !important
+  }
+
+  @media screen and (max-width: 767px) {
+    .slickRow.testimonials .slick-arrow.slick-prev {
+      left: -5px !important
+    }
+
+    .slickRow.testimonials .slick-arrow.slick-next {
+      right: 0 !important
+    }
+  }
+
+  #branchContainer > div.chpt-_location-content:nth-child(even) {
     background-color: #f8f8f7
   }
 
@@ -1066,5 +1388,4 @@
       margin-top: 36px
     }
   }
-
 }
