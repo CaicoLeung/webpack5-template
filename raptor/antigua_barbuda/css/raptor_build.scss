@@ -130,7 +130,7 @@
   p.h3,
   h3 a,
   div.h3 a {
-    font-family: "webSerif";
+
     font-size: 32px;
     font-weight: 400;
     margin: 0;
@@ -175,7 +175,6 @@
 
 
   strong {
-    font-weight: 500;
     font-display: swap
   }
 
@@ -606,7 +605,7 @@
   .pullquote_section .pullquote_text blockquote p {
     font-size: 18px !important;
     line-height: 1.2 !important;
-    font-family: "webSerif";
+
     color: #fff;
     margin: 0;
     text-align: left
@@ -938,7 +937,7 @@
   }
 
   .team_block .bio {
-    margin-top: 14px;
+    margin-top: .875rem;
   }
 
   .team_block .team_member {

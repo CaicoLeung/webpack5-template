@@ -130,7 +130,7 @@
   p.h3,
   h3 a,
   div.h3 a {
-    font-family: "webSerif";
+
     font-size: 32px;
     font-weight: 400;
     margin: 0;
@@ -187,7 +187,6 @@
 
 
   strong {
-    font-weight: 500;
     font-display: swap
   }
 
@@ -446,8 +445,8 @@
     width: calc(8.33333333% * 12)
   }
 
-  .parent-col-text-9 .article_content > p,
-  .parent-col-text-9 .article_content > ul {
+  .parent-col-text-9 .article_content>p,
+  .parent-col-text-9 .article_content>ul {
     width: calc(8.33333333% * 9)
   }
 
@@ -464,8 +463,8 @@
       width: calc(8.33333333% * 12)
     }
 
-    .parent-col-md-text-12 .article_content > p,
-    .parent-col-md-text-12 .article_content > ul {
+    .parent-col-md-text-12 .article_content>p,
+    .parent-col-md-text-12 .article_content>ul {
       width: unset
     }
   }
@@ -475,6 +474,7 @@
     .flex {
       display: block
     }
+
     .hide-sm {
       display: none !important
     }
@@ -706,7 +706,7 @@
     background-color: rgba(136, 126, 111, .9);
     padding: 2em;
     color: #fff;
-    quotes: "“" "”" "‘" "’";
+    quotes: "“""”""‘""’";
     position: relative;
     margin: 0;
     max-height: 75%
@@ -715,7 +715,7 @@
   .pullquote_section .pullquote_text blockquote p {
     font-size: 18px !important;
     line-height: 1.2 !important;
-    font-family: "webSerif";
+
     color: #fff;
     margin: 0;
     text-align: left
@@ -747,7 +747,7 @@
     background-color: rgba(136, 126, 111, .9);
     padding: 4em 3em;
     color: #fff;
-    quotes: "“" "”" "‘" "’";
+    quotes: "“""”""‘""’";
     position: relative;
     margin: 0
   }
@@ -1036,7 +1036,7 @@
     margin-top: 6px
   }
 
-  div > p:first-child {
+  div>p:first-child {
     margin-top: 0
   }
 
@@ -1133,7 +1133,7 @@
     z-index: 10
   }
 
-  .slick-arrow > div {
+  .slick-arrow>div {
     transition: linear background-color .5s;
     transform: translate(0, 0%) !important;
     background-repeat: no-repeat !important;
@@ -1155,11 +1155,11 @@
     right: 6%
   }
 
-  .slick-arrow.slick-next > div {
+  .slick-arrow.slick-next>div {
     transform: rotate(-90deg) translate(0, 0%) !important
   }
 
-  html:not(.touchevents) .slick-arrow:hover > div {
+  html:not(.touchevents) .slick-arrow:hover>div {
     background-color: #fff !important
   }
 
@@ -1223,6 +1223,11 @@
     font-size: 14px;
     font-weight: 400;
     text-align: left
+  }
+
+  .team_block .bio {
+    margin-top: .875rem;
+
   }
 
   .team_block .team_member {
@@ -1349,7 +1354,7 @@
   }
 
 
-  .slickRow.testimonials .slick-arrow:hover > div {
+  .slickRow.testimonials .slick-arrow:hover>div {
     background-color: transparent !important
   }
 
@@ -1367,7 +1372,7 @@
     }
   }
 
-  #branchContainer > div.chpt-_location-content:nth-child(even) {
+  #branchContainer>div.chpt-_location-content:nth-child(even) {
     background-color: #f8f8f7
   }
 
