@@ -1,11 +1,6 @@
-@import url(../../../common.scss);
+@import '../../../common.scss';
 
 .chpt_content_container {
-  /*!********************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./raptor/aljezur/css/raptor_core.css ***!
-  \********************************************************************************************************************************/
-
-
   .startHidden {
     display: none
   }
@@ -208,9 +203,7 @@
   }
 
 
-  h3.p {
-
-  }
+  h3.p {}
 
   p:first-child {
     margin-top: 0
@@ -1022,9 +1015,7 @@
     text-align: initial
   }
 
-  .webSerif {
-
-  }
+  .webSerif {}
 
   .info_block {
     overflow: visible;
