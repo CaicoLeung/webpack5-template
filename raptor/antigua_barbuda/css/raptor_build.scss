@@ -1,3 +1,5 @@
+@import url(../../../common.scss);
+
 .chpt_content_container {
   /* !****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./raptor/antigua&barbuda/css/raptor_core.css ***!
@@ -184,7 +186,7 @@
   blockquote,
   h3.p {
     font-size: 14px;
-    line-height: 130%;
+    line-height: 150%;
     font-weight: 400
   }
 
@@ -239,9 +241,7 @@
     background-color: transparent
   }
 
-  small {
-    font-size: 80%
-  }
+
 
   img {
     border-style: none
@@ -913,7 +913,7 @@
     \  ******************************************************************************************************************************************/
 
   .team_block .name {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     text-align: left;
     margin-bottom: 0
@@ -1012,9 +1012,7 @@
   }
 
   @media screen and (min-width: 1600px) {
-    .team_block .name {
-      font-size: 18px
-    }
+
 
     .team_block .team_member:first-child {
       padding-right: 76px
