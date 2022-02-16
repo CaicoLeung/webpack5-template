@@ -107,7 +107,7 @@
   html,
   body,
   textarea {
-    font-family: "webSans", sans-serif;
+
     font-weight: 400
   }
 
@@ -172,7 +172,7 @@
 
   h5,
   div.h5 {
-    font-family: "webSans";
+
     margin: 0;
     letter-spacing: 0;
     font-kerning: none;
@@ -204,7 +204,7 @@
 
 
   h3.p {
-    font-family: webSans
+
   }
 
   p:first-child {
@@ -258,7 +258,7 @@
   }
 
   code {
-    font-family: monospace, monospace;
+
     font-size: 1em
   }
 
@@ -733,7 +733,7 @@
     color: #fff;
     margin: 20px 0 0;
     font-size: 14px !important;
-    font-family: "webSans";
+
     display: block;
     font-weight: 500
   }
@@ -946,7 +946,7 @@
   .article_content h3 {
     font-size: 20px;
     margin: 22.5px 0;
-    font-family: "webSerif"
+
   }
 
   .selectImg {
@@ -1019,7 +1019,7 @@
   }
 
   .webSerif {
-    font-family: webSerif
+
   }
 
   .info_block {
@@ -1105,7 +1105,7 @@
 
   .slick-arrow.slick-prev::before,
   .slick-arrow.slick-next::before {
-    font-family: 'slick';
+
     font-size: 20px;
     line-height: 1;
     opacity: .75;
@@ -1331,13 +1331,13 @@
   .serviceReview p {
     font-size: 23px;
     line-height: 150%;
-    font-family: webSerif;
+    ;
     font-style: italic
   }
 
   .serviceAuthor {
     font-size: 16px;
-    font-family: webSans;
+    ;
     font-weight: 500;
     text-align: right
   }
