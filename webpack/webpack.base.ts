@@ -13,10 +13,7 @@ import getChestertonEntry from "./utils/getChestertonEntry";
 const baseConfig: webpack.Configuration = {
   stats: "minimal",
   context: path.resolve(process.cwd()),
-  entry: {
-    home: "./src/index.tsx",
-    dubai: "./raptor/dubai/index.ts",
-  },
+  entry: {},
   output: {
     clean: true,
     path: path.join(process.cwd(), "dist"),
@@ -159,6 +156,11 @@ if (isRaptorProject) {
   const plugins = getChestertonsHtmlWebpackPlugins();
 
   baseConfig.plugins?.push(...plugins);
+} else {
+  const reactEntry = {
+    reactApp: "./src/index.tsx",
+  };
+  Object.assign(baseConfig.entry, reactEntry);
 }
 
 export default baseConfig;
