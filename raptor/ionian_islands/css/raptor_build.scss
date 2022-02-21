@@ -6,7 +6,7 @@
   \***************************************************************************************************************************************/
 
   .startHidden {
-    display: none
+    //display: none
   }
 
   .chpt_frame.bodyWidth {
@@ -1079,13 +1079,10 @@
   .slick-arrow {
     font-size: 0;
     line-height: 0;
-    position: absolute;
-    top: 50%;
     display: block;
     width: 20px;
     height: 20px;
     padding: 0;
-    transform: translate(0, -50%);
     cursor: pointer;
     color: transparent;
     border: none;
@@ -1120,22 +1117,12 @@
     -moz-osx-font-smoothing: grayscale
   }
 
-  .slick-arrow.slick-prev {
-    left: -25px
-  }
-
-  .slick-arrow.slick-next {
-    right: 25px
-  }
-
   .slick-arrow {
     cursor: pointer;
     padding: 0;
     margin: 0 !important;
     width: 24px;
     height: 24px;
-    bottom: auto;
-    top: calc(50% - 33px) !important;
     z-index: 10
   }
 
@@ -1149,17 +1136,10 @@
     margin: 12px
   }
 
-  .slick-arrow.slick-prev {
-    left: 6%
-  }
-
   .slick-arrow::before {
     content: ""
   }
 
-  .slick-arrow.slick-next {
-    right: 6%
-  }
 
   .slick-arrow.slick-next>div {
     transform: rotate(-90deg) translate(0, 0%) !important
@@ -1340,7 +1320,6 @@
   .serviceReview p {
     font-size: 23px;
     line-height: 150%;
-    ;
     font-style: italic
   }
 
@@ -1355,31 +1334,38 @@
     margin-top: 20px
   }
 
-  .slickRow.testimonials .slick-arrow {
-    top: -40px !important;
-    height: 48px !important;
-    background-size: 40% !important;
-    background-repeat: no-repeat;
-    background-color: transparent !important;
-    background-image: url(../icons/icon-arrow-right.svg) !important;
-    width: 44px !important
+  .testimonials-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 22.5px 0;
   }
 
-  .slickRow.testimonials .slick-arrow:hover>div {
+  .slick-arrow {
+    background-size: 40% !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent !important;
+    background-image: url(../icons/icon-arrow-right.svg) !important;
+  }
+
+  .slick-arrow:hover>div {
     background-color: transparent !important
   }
 
-  .slickRow.testimonials .slick-arrow.slick-prev {
+  .slick-arrow.slick-prev {
     display: none !important
   }
 
   @media screen and (max-width: 767px) {
-    .slickRow.testimonials .slick-arrow.slick-prev {
-      left: -5px !important
+    .slick-arrow.slick-prev {
+      width: 48px;
+      height: 48px;
     }
 
-    .slickRow.testimonials .slick-arrow.slick-next {
-      right: 0 !important
+    .slick-arrow.slick-next {
+      width: 48px;
+      height: 48px;
     }
   }
 
