@@ -52,7 +52,7 @@ const baseConfig: webpack.Configuration = {
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
+        type: "asset",
       },
       {
         test: /\.txt$/i,
