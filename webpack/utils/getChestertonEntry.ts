@@ -1,4 +1,4 @@
-import { getAllRaptorHtml, getAllRaptorInlineHtml } from "./getChestertonsHtmlWebpackPlugins";
+import { getAllRaptorHtml } from "./getChestertonsHtmlWebpackPlugins";
 import webpack from "webpack";
 
 export function getRaptorWebpackEntry(): webpack.Configuration["entry"] {
