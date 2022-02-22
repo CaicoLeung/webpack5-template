@@ -1,8 +1,8 @@
-import { getAllChestertonsHtml } from "./getChestertonsHtmlWebpackPlugins";
+import { getAllRaptorHtml, getAllRaptorInlineHtml } from "./getChestertonsHtmlWebpackPlugins";
 import webpack from "webpack";
 
-export default function getChestertonEntry(): webpack.Configuration["entry"] {
-  const names = getAllChestertonsHtml();
+export function getRaptorWebpackEntry(): webpack.Configuration["entry"] {
+  const names = getAllRaptorHtml();
   return names.reduce((acc, name) => {
     return {
       ...acc,

@@ -7,8 +7,8 @@ import CopyWebpackPlugin from "copy-webpack-plugin";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import ESLintWebpackPlugin from "eslint-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import getChestertonsHtmlWebpackPlugins from "./utils/getChestertonsHtmlWebpackPlugins";
-import getChestertonEntry from "./utils/getChestertonEntry";
+import { getRaptorHtmlWebpackPlugins } from "./utils/getChestertonsHtmlWebpackPlugins";
+import { getRaptorWebpackEntry } from "./utils/getChestertonEntry";
 
 const baseConfig: webpack.Configuration = {
   stats: "minimal",
@@ -152,8 +152,8 @@ if (process.env.ANALYZER) {
 }
 
 if (isRaptorProject) {
-  Object.assign(baseConfig.entry, getChestertonEntry());
-  const plugins = getChestertonsHtmlWebpackPlugins();
+  Object.assign(baseConfig.entry, getRaptorWebpackEntry());
+  const plugins = getRaptorHtmlWebpackPlugins();
 
   baseConfig.plugins?.push(...plugins);
 } else {

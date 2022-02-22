@@ -3,7 +3,7 @@ import webpack from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import baseConfig from "./webpack.base";
 import { isRaptorProject } from "./contants";
-import { getAllChestertonsHtml } from "./utils/getChestertonsHtmlWebpackPlugins";
+import { getAllRaptorHtml } from "./utils/getChestertonsHtmlWebpackPlugins";
 import HTMLInlineCSSWebpackPlugin from "html-inline-css-webpack-plugin";
 import PurgecssPlugin from "purgecss-webpack-plugin";
 
@@ -32,7 +32,7 @@ if (isRaptorProject) {
     }),
     // 剔除没有使用到的css样式
     new PurgecssPlugin({
-      paths: getAllChestertonsHtml().map((name) => `raptor/${name}/index.html`),
+      paths: getAllRaptorHtml().map((name) => `raptor/${name}/index.html`),
     }),
   );
 }

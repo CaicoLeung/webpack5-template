@@ -3,19 +3,22 @@ import path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import { isProd } from "../contants";
 
-const htmlFolder = path.join(process.cwd(), "raptor");
+const raptorFolder = path.join(process.cwd(), "raptor");
 
-export function getAllChestertonsHtml() {
-  return fs.readdirSync(htmlFolder);
+export function getAllRaptorHtml() {
+  return fs.readdirSync(raptorFolder);
 }
 
 function getChestertonsHtmlName(file: string) {
   return file.replace(/\.html$/, "");
 }
 
-function getHtmlWebpackPluginConfig(fileName: string): HtmlWebpackPlugin.Options {
+function getHtmlWebpackPluginConfig(
+  fileName: string,
+  folder = "raptor",
+): HtmlWebpackPlugin.Options {
   return {
-    template: `raptor/${fileName}/index.html`,
+    template: `${folder}/${fileName}/index.html`,
     filename: `${fileName}.html`,
     chunks: [`${fileName}`],
     minify: isProd && {
@@ -30,11 +33,15 @@ function getHtmlWebpackPluginConfig(fileName: string): HtmlWebpackPlugin.Options
   };
 }
 
-export default function getChestertonsHtmlWebpackPlugins() {
-  const allChestertonsHtml = getAllChestertonsHtml();
-  const webpackPluginConfigs = allChestertonsHtml.map((file) => {
+function getHtmlWebpackPlugins(files: string[], folder = "raptor") {
+  const webpackPluginConfigs = files.map((file) => {
     const fileName = getChestertonsHtmlName(file);
-    return getHtmlWebpackPluginConfig(fileName);
+    return getHtmlWebpackPluginConfig(fileName, folder);
   });
   return webpackPluginConfigs.map((config) => new HtmlWebpackPlugin(config));
+}
+
+export function getRaptorHtmlWebpackPlugins() {
+  const files = getAllRaptorHtml();
+  return getHtmlWebpackPlugins(files);
 }
