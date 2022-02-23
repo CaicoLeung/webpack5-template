@@ -2,8 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./app";
 
-import "@/common/iterator";
-import "@picocss/pico";
+import "./main.css";
+
+// import "@/common/iterator";
+// import "@picocss/pico";
 
 console.log("Test Index");
 

@@ -130,7 +130,7 @@ let autoMergeCommon = false;
 if (argv.autoMergeCommon) {
   autoMergeCommon = true;
 }
-let content = ["./src/**/*.html", "./src/**/*.json"];
+let content = ["./src/**/*.html", "./src/**/*.json", "./src/**/*.tsx", "./src/**/*.ts"];
 if (autoMergeCommon) {
   content.unshift("../theme-common/**/*.html", "../theme-common/**/*.json");
 }
