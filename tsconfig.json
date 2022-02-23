@@ -106,10 +106,10 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
+  "include": [".eslintrc.js", "./src/*"],
   "exclude": [
     ".history",
     "dist/**",
     "node_modules",
-    "src"
   ]
 }
