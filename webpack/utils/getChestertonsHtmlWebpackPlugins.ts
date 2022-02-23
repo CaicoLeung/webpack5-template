@@ -33,7 +33,7 @@ function getHtmlWebpackPluginConfig(
   };
 }
 
-function getHtmlWebpackPlugins(files: string[], folder = "raptor") {
+function getHtmlWebpackPlugins(files: string[], folder: string) {
   const webpackPluginConfigs = files.map((file) => {
     const fileName = getChestertonsHtmlName(file);
     return getHtmlWebpackPluginConfig(fileName, folder);
@@ -43,5 +43,5 @@ function getHtmlWebpackPlugins(files: string[], folder = "raptor") {
 
 export function getRaptorHtmlWebpackPlugins() {
   const files = getAllRaptorHtml();
-  return getHtmlWebpackPlugins(files);
+  return getHtmlWebpackPlugins(files, "raptor");
 }

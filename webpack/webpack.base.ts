@@ -62,11 +62,6 @@ const baseConfig: webpack.Configuration = {
   },
   plugins: [
     new webpack.ProgressPlugin(),
-    new HtmlWebpackPlugin({
-      template: "src/index.html",
-      filename: "index.html",
-      chunks: ["home"],
-    }),
     new CopyWebpackPlugin({
       patterns: [{ from: "static", to: "static" }],
     }),
@@ -158,9 +153,26 @@ if (isRaptorProject) {
   baseConfig.plugins?.push(...plugins);
 } else {
   const reactEntry = {
-    reactApp: "./src/index.tsx",
+    index: "./src/index.tsx",
   };
   Object.assign(baseConfig.entry, reactEntry);
+
+  const config: HtmlWebpackPlugin.Options = {
+    template: "src/index.html",
+    filename: "index.html",
+    chunks: ["index"],
+    minify: isProd && {
+      removeComments: true,
+      removeRedundantAttributes: true,
+      removeEmptyAttributes: true,
+      collapseWhitespace: true,
+      removeStyleLinkTypeAttributes: true,
+      minifyCSS: true,
+      minifyJS: true,
+    },
+  };
+
+  baseConfig.plugins?.push(new HtmlWebpackPlugin(config));
 }
 
 export default baseConfig;
