@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 import Draggable from "@/example/draggable";
 
-const App: React.FC = () => {
+function App() {
   return (
     <div className="app">
       {/*<ImgLazyPage />*/}
