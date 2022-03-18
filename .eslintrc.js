@@ -1,4 +1,8 @@
 module.exports = {
+  root: true,
+  parserOptions: {
+    createDefaultProgram: true
+  },
   extends: [require.resolve("react-ts-fabric/dist/eslint")],
   globals: {},
   rules: {

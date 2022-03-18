@@ -1,4 +1,4 @@
-import { isDev, isProd, isRaptorProject } from "./contants";
+import { isDev, isProd, isRaptorProject, isVueDesignProject } from "./contants";
 import webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import path from "path";
@@ -154,6 +154,27 @@ if (isRaptorProject) {
   const plugins = getRaptorHtmlWebpackPlugins();
 
   baseConfig.plugins?.push(...plugins);
+} else if (isVueDesignProject) {
+  const reactEntry = {
+    vueDesign: "./vue-design-realize/renderer/example.ts"
+  };
+  Object.assign(baseConfig.entry, reactEntry);
+
+  const config: HtmlWebpackPlugin.Options = {
+    filename: "index.html",
+    chunks: ["vueDesign"],
+    minify: isProd && {
+      removeComments: true,
+      removeRedundantAttributes: true,
+      removeEmptyAttributes: true,
+      collapseWhitespace: true,
+      removeStyleLinkTypeAttributes: true,
+      minifyCSS: true,
+      minifyJS: true,
+    },
+  };
+
+  baseConfig.plugins?.push(new HtmlWebpackPlugin(config));
 } else {
   const reactEntry = {
     index: "./src/index.tsx",
