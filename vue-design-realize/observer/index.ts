@@ -6,10 +6,12 @@ type DataType = typeof data;
 
 let activeEffect: EffectFn;
 const buckets = new WeakMap<DataType, Map<keyof DataType, Set<EffectFn>>>();
+const effectStack: EffectFn[] = [];
 
 const data = {
   ok: true,
   text: "Hello World",
+  foo: "foo"
 };
 
 const obj = new Proxy<DataType>(data, {
@@ -66,26 +68,24 @@ function effect(fn: Function) {
   const effectFn: EffectFn = () => {
     cleanup(effectFn);
     activeEffect = effectFn;
+    effectStack.push(effectFn);
     fn();
+    effectStack.pop();
+    activeEffect = effectStack[effectStack.length - 1];
   };
   effectFn.deps = [];
   effectFn();
 }
 
-effect(() => {
-  console.log("effect run");
-  document.body.innerText = obj.ok ? obj.text : "not";
+let temp1, temp2;
+
+effect(function effectFn1() {
+  console.log("effectFn1 run");
+
+  effect(function effectFn2() {
+    console.log("effectFn2 run");
+    temp2 = obj.foo;
+  })
+
+  temp1 = obj.text;
 });
-
-setTimeout(() => {
-  obj.ok = false;
-}, 1000);
-
-setTimeout(() => {
-  obj.ok = true;
-  obj.text = "Hello Vue3";
-}, 3000);
-
-setTimeout(() => {
-  obj.text = "Hello Vue4";
-}, 5000);
