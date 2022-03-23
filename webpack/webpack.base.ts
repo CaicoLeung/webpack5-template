@@ -156,7 +156,7 @@ if (isRaptorProject) {
   baseConfig.plugins?.push(...plugins);
 } else if (isVueDesignProject) {
   const reactEntry = {
-    vueDesign: "./vue-design-realize/renderer/example.ts"
+    vueDesign: "./vue-design-realize/observer/index.ts"
   };
   Object.assign(baseConfig.entry, reactEntry);
 
