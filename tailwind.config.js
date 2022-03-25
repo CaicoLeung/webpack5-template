@@ -27,7 +27,6 @@ const colors = {
   "secondary-06": `var(--secondaryColor_06)`,
   "secondary-07": `var(--secondaryColor_07)`,
   "secondary-08": `var(--secondaryColor_08)`,
-  // "secondary-05": `rgba(var(--secondaryColor_05),var(--tw-text-opacity))`,
 };
 
 // 在prod打包时颜色统一转换为rgba
@@ -136,26 +135,11 @@ if (autoMergeCommon) {
 }
 
 module.exports = {
-  darkMode: "media",
-  purge: {
+  content: {
     layers: ["components", "utilities"],
     content: content,
     options: {
       safelist: [
-        // classNames,
-        // /^(block|sm:block|md:block|lg:block|xl:block|2xl:block)/,
-        // /^(absolute|sm:absolute|md:absolute|lg:absolute|xl:absolute|2xl:absolute)/,
-        // /^(fixed|sm:fixed|md:fixed|lg:fixed|xl:fixed|2xl:fixed)/,
-        // /^(sticky|sm:sticky|md:sticky|lg:sticky|xl:sticky|2xl:sticky)/,
-        // /^(relative|sm:relative|md:relative|lg:relative|xl:relative|2xl:relative)/,
-        // /^(grid|sm:grid|md:grid|lg:grid|xl:grid|2xl:grid)/,
-        // /^(hidden|sm:hidden|md:hidden|lg:hidden|xl:hidden|2xl:hidden)/,
-        // /^(truncate|sm:truncate|md:truncate|lg:truncate|xl:truncate|2xl:truncate)/,
-        // /^(shadow|sm:shadow|md:shadow|lg:shadow|xl:shadow|2xl:shadow)/,
-        // /^(italic|sm:italic|md:italic|lg:italic|xl:italic|2xl:italic)/,
-        // /^(not-italic|sm:not-italic|md:not-italic|lg:not-italic|xl:not-italic|2xl:not-italic)/,
-        classNames2,
-        // /^(grid-cols-5|sm:grid-cols-5|md:grid-cols-5|lg:grid-cols-5|xl:grid-cols-5|2xl:grid-cols-5)/,
         /^(text-left|sm:text-left|md:text-left|lg:text-left|xl:text-left|2xl:text-left)/,
       ],
     },
