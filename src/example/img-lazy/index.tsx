@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./index.module.scss";
 
-const ImgLazyPage: React.FC = () => {
+function ImgLazyPage ()  {
   const rootRef = useRef<HTMLDivElement>(null);
 
   const handler = () => {
